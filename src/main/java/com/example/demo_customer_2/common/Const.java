@@ -1,4 +1,4 @@
-package com.example.demo_order_2.common;
+package com.example.demo_customer_2.common;
 
 public class Const {
 

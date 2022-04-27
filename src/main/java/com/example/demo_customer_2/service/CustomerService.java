@@ -1,9 +1,9 @@
-package com.example.demo_order_2.service;
+package com.example.demo_customer_2.service;
 
-import com.example.demo_order_2.common.Const;
-import com.example.demo_order_2.domain.entity.Customer;
-import com.example.demo_order_2.domain.reply.ValidateCustomerReply;
-import com.example.demo_order_2.repo.CustomerRepository;
+import com.example.demo_customer_2.common.Const;
+import com.example.demo_customer_2.domain.entity.Customer;
+import com.example.demo_customer_2.domain.reply.ValidateCustomerReply;
+import com.example.demo_customer_2.repo.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

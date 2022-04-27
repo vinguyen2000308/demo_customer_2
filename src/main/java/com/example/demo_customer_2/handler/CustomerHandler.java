@@ -1,11 +1,11 @@
-package com.example.demo_order_2.handler;
+package com.example.demo_customer_2.handler;
 
-import com.example.demo_order_2.common.KafkaProducer;
-import com.example.demo_order_2.domain.Data;
-import com.example.demo_order_2.domain.command.ChangeCustomerInfo;
-import com.example.demo_order_2.domain.command.ValidateCustomerCommand;
-import com.example.demo_order_2.domain.reply.ValidateCustomerReply;
-import com.example.demo_order_2.service.CustomerService;
+import com.example.demo_customer_2.common.KafkaProducer;
+import com.example.demo_customer_2.domain.Data;
+import com.example.demo_customer_2.domain.command.ChangeCustomerInfoCommand;
+import com.example.demo_customer_2.domain.command.ValidateCustomerCommand;
+import com.example.demo_customer_2.domain.reply.ValidateCustomerReply;
+import com.example.demo_customer_2.service.CustomerService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
-import static com.example.demo_order_2.common.MessageUtil.checkCommandType;
+import static com.example.demo_customer_2.common.MessageUtil.checkCommandType;
 
 @Component
 public class CustomerHandler {
@@ -42,7 +42,7 @@ public class CustomerHandler {
         if (checkCommandType(ValidateCustomerCommand.class, type)) {
             handleValidateCustomerCommand(data);
         }
-        if (checkCommandType(ChangeCustomerInfo.class, type)) {
+        if (checkCommandType(ChangeCustomerInfoCommand.class, type)) {
             handleChangeCustomerInfo(data);
         }
 

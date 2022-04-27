@@ -1,4 +1,4 @@
-package com.example.demo_order_2.domain.entity;
+package com.example.demo_customer_2.domain.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "customer")
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Customer {
 
     @Id

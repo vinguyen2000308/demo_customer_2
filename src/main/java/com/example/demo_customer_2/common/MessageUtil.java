@@ -1,12 +1,7 @@
-package com.example.demo_order_2.common;
+package com.example.demo_customer_2.common;
 
-import com.example.demo_order_2.domain.Command;
-import com.example.demo_order_2.domain.Data;
-import com.example.demo_order_2.domain.reply.ReplyMessage;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import org.springframework.kafka.support.SendResult;
-import org.springframework.util.concurrent.ListenableFuture;
-import org.springframework.util.concurrent.ListenableFutureCallback;
+import com.example.demo_customer_2.domain.Command;
+import com.example.demo_customer_2.domain.Data;
 
 import java.util.HashMap;
 import java.util.Map;
