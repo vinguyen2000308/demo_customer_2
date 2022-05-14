@@ -42,4 +42,7 @@ public class Customer {
     @Column(name = "updated_date")
     private LocalDateTime updatedDateTime;
 
+    @Column(name = "customer_type")
+    private String customerType;
+
 }

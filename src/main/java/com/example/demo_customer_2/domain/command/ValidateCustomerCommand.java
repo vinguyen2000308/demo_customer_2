@@ -16,4 +16,5 @@ public class ValidateCustomerCommand implements Command {
     private Long customerId;
     private Long orderId;
 
+
 }

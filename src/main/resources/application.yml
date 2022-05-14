@@ -10,6 +10,7 @@ spring:
       show-sql: true
   kafka:
     consumer:
+#      Read latest or earliest ofset
       auto-offset-reset: latest
       group-id: 1
-    bootstrap-servers: 108.136.45.99:9092
+    bootstrap-servers: 108.136.236.103:9092

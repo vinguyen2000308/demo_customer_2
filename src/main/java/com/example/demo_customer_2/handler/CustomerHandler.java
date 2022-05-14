@@ -31,6 +31,7 @@ public class CustomerHandler {
 
     @KafkaListener(topics = "customer-service", groupId = "group1")
     public void customerServiceHandler(String message) throws JsonProcessingException {
+        System.out.println("Received Message: " + message);
         Data data = objectMapper.readValue(message, Data.class);
         if (Objects.nonNull(data)) {
             handleMessage(data);

@@ -11,5 +11,6 @@ public class ValidateCustomerReply implements ReplyMessage {
     private String code;
     private String message;
     private Long customerId;
+    private Double tax;
 
 }

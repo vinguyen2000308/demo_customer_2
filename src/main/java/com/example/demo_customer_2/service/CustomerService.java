@@ -4,9 +4,11 @@ import com.example.demo_customer_2.common.Const;
 import com.example.demo_customer_2.domain.entity.Customer;
 import com.example.demo_customer_2.domain.reply.ValidateCustomerReply;
 import com.example.demo_customer_2.repo.CustomerRepository;
+import com.example.demo_customer_2.repo.CustomerTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -14,6 +16,8 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private CustomerTypeRepo customerTypeRepo;
 
 
     public ValidateCustomerReply checkCustomerInfo(Long customerId) {
@@ -43,7 +47,15 @@ public class CustomerService {
             validateCustomerReply.setCustomerId(customerId);
             return validateCustomerReply;
         }
-        return ValidateCustomerReply.builder().customerId(customerId).code("200").message("CUSTOMER VALIDATED").build();
+        Double tax = null;
+        if (Objects.nonNull(customer.getCustomerType())) {
+            tax = customerTypeRepo.getCustomerTypeByCustomerType(customer.getCustomerType()).getTax();
+        }
+
+        return ValidateCustomerReply.builder().customerId(customerId)
+                .tax(tax)
+                .code("200")
+                .message("CUSTOMER VALIDATED").build();
 
     }
 }
